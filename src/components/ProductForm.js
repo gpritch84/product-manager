@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import {navigate} from '@reach/router';
 import axios from 'axios';
 export default () => {
 
@@ -18,6 +19,9 @@ export default () => {
             description,
         })
             .then(res=>console.log(res))
+            .then(res => {
+                navigate('/product')
+            })
             .catch(err=>console.log(err))
     }
     //onChange to update title, price and description
